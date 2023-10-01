@@ -104,13 +104,15 @@
         type="text/css"
         media="all"
     />
+    <!-- スワイパーの読み込み -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <!-- cssの読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="top-page.css">
     <meta name="generator" content="WordPress 6.2.2" />
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" href="../Trustweb_1_TOP/trust/css/templateB.css">
+    <link rel="stylesheet" href="trust/css/templateB.css">
 
     
 </head>
@@ -118,7 +120,7 @@
     <!-- sidebar サイドバー-->
     <div class="sidebar">
         <div class="logo">
-            <img src="../Trustweb_1_TOP/trust/img/logo.png"/>
+            <img src="trust/img/logo.png"/>
         </div>
         <div class="menu">
             <a href="#">製品情報　　 　　　→</a>
@@ -128,26 +130,26 @@
         </div>
         <div class="webshop">
             <a href="">
-                <img src="../Trustweb_1_TOP/trust/img/6f642d399ab05af67b86f7dad8505891.png"/>
+                <img src="trust/img/6f642d399ab05af67b86f7dad8505891.png"/>
                 <p>WEBショップ</p>
             </a>
         </div>
         <div class="toiawase">
             <a href="">
-                <img src="../Trustweb_1_TOP/trust/img/mail.png"/>
+                <img src="trust/img/mail.png"/>
                 <p>お問い合わせ →</p>
             </a>
             </div>
         <div class="icon">
             <a href="#">
-            <img src="../Trustweb_1_TOP/trust/img/youtube.png"/></a>
+            <img src="trust/img/youtube.png"/></a>
             <a href="#">
-                <img src="../Trustweb_1_TOP/trust/img/facebook.png"/></a>
+                <img src="trust/img/facebook.png"/></a>
             <a href="#">
-                <img src="../Trustweb_1_TOP/trust/img/share.png"/></a>
+                <img src="trust/img/share.png"/></a>
         </div>
         <div class="search">
-            <a href=""><img src="../Trustweb_1_TOP/trust/img/search.png"/></a>
+            <a href=""><img src="trust/img/search.png"/></a>
         </div>
     </div>
     
@@ -155,32 +157,57 @@
     <div class="main-content">
         <section id="mainvisual">
             <div class="visual">
-                <ul class="slider">
+                <!-- <ul class="slider">
                     <li class="top-image">
-                        <img src="../Trustweb_1_TOP/Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
-                        <div class="slider-btn">
-                            <a href="#">
+                        
+                        
+                    </li>
+                   
+                </ul> -->
+                <!-- Slider main container -->
+                <div class="swiper" id="swiper-mainvisual">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
+                            <a href="#" class="link">
+                                <span>LEDビジョン製品ラインナップを見る</span>
+                                
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
+                            <a href="#" class="link">
                                 <span>LEDビジョン製品ラインナップを見る</span>
                             </a>
                         </div>
-                    </li>
-                    <li class="top-image">
-                        <img src="../Trustweb_1_TOP/Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
-                        <div class="slider-btn">
-                            <a href="#">
+                        <div class="swiper-slide">
+                            <img src="Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
+                            <a href="#" class="link">
                                 <span>LEDビジョン製品ラインナップを見る</span>
                             </a>
                         </div>
-                    </li>
-                    <li class="top-image">
-                        <img src="../Trustweb_1_TOP/Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
-                        <div class="slider-btn">
-                            <a href="#">
+                        <div class="swiper-slide">
+                            <img src="Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
+                            <a href="#" class="link">
                                 <span>LEDビジョン製品ラインナップを見る</span>
                             </a>
                         </div>
-                    </li>
-                </ul>
+                        <div class="swiper-slide">
+                            <img src="Links/top_slider_800x450_2023_ledvision (1).png" alt="製品画像1">
+                            <a href="#" class="link">
+                                <span>LEDビジョン製品ラインナップを見る</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
         </section>
 
@@ -210,39 +237,63 @@
                         </li>
                     </ul>
                 </div>
-    
                 <div class="products-lineup">
                     <div class="title">
-                        <img src="../Trustweb_1_TOP/trust/img/stick1.png" alt="stick画像">
+                        <img src="trust/img/stick1.png" alt="stick画像">
                         <p>主な製品ラインナップ</p>
                     </div>
-                    <ul>
-                        <li class="products-list">
-                            <img src="../Trustweb_1_TOP/Links/284x264_top_product_category_signage.png" alt="製品画像1">
-                            <p class="products-name">デジタルサイネージ</p>
-                        </li>
-                        <li class="products-list">
-                            <img src="../Trustweb_1_TOP/Links/284x264_top_product_category_digitalboard.png" alt="製品画像2">
-                            <p class="products-name">電子黒板</p>
-                        </li>
-                        <li class="products-list">
-                            <img src="../Trustweb_1_TOP/Links/284x264_top_product_category_touchpanel.png" alt="製品画像3">
-                            <p class="products-name">産業用タッチパネル / モニター</p>
-                        </li>
-                        <li class="products-list">
-                            <img src="../Trustweb_1_TOP/Links/284x264_top_product_category_monitor.png" alt="製品画像4">
-                            <p class="products-name">産業用ディスプレイ</p>
-                        </li>
-                        <li class="products-list">
-                            <img src="../Trustweb_1_TOP/Links/284x264_top_product_category_ic.png" alt="製品画像5">
-                            <p class="products-name">半導体・電子部品</p>
-                        </li>
-                        <li class="products-list">
-                            <img src="../Trustweb_1_TOP/Links/284x264_top_product_category_ic.png" alt="製品画像3">
-                            <p class="products-name">半導体・電子部品</p>
-                        </li>
-                    </ul>
-                    <hr>
+                    <!-- Slider main container -->
+                    <div class="swiper" id="swiper-products">
+                    <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <a href="#" class="product">
+                                    <img src="Links/284x264_top_product_category_signage.png" alt="製品画像1">
+                                    <p class="products-name">デジタルサイネージ</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="Links/284x264_top_product_category_digitalboard.png" alt="製品画像2">
+                                    <p class="products-name">電子黒板</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="Links/284x264_top_product_category_monitor.png" alt="製品画像4">
+                                    <p class="products-name">産業用ディスプレイ</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="Links/284x264_top_product_category_signage.png" alt="製品画像1">
+                                    <p class="products-name">デジタルサイネージ</p>
+                                </a>
+                            </div>   
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="Links/284x264_top_product_category_ic.png" alt="製品画像5">
+                                    <p class="products-name">半導体・電子部品</p>
+                                </a>
+                            </div> 
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="Links/284x264_top_product_category_ic.png" alt="製品画像5">
+                                    <p class="products-name">半導体・電子部品</p>
+                                </a>
+                            </div>                      
+                        </div>
+                        <!-- If we need pagination -->
+                        <!-- <div class="swiper-pagination"></div> -->
+
+                        <!-- If we need navigation buttons -->
+            
+
+                        <!-- If we need scrollbar -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+            
                 </div>
             </div>
         </section>
@@ -275,7 +326,9 @@
                                         <dt class="category">製品・サービス</dt>
                                     </div>
                                     <div>
-                                        <dd class="detail">製品の新情報見出しテキストサンプル</dd>
+                                        <dd class="detail">
+                                            <a href="#">製品の新情報見出しテキストサンプル</a>
+                                        </dd>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -284,7 +337,9 @@
                                         <dt class="category">お知らせ</dt>
                                     </div>
                                     <div>
-                                        <dd class="detail">お知らせの見出しサンプル</dd>
+                                        <dd class="detail">
+                                            <a href="#">お知らせの見出しサンプル</a>
+                                        </dd>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -293,7 +348,11 @@
                                         <dt class="category">製品・サービス</dt>
                                     </div>
                                     <div>
-                                        <dd class="detail">製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見</dd>
+                                        <dd class="detail">
+                                            <a href="#">
+                                            製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見
+                                            </a>
+                                        </dd>
                                     </div>
                                 </div>
                             </dl>
@@ -306,7 +365,9 @@
                                         <dt class="category">製品・サービス</dt>
                                     </div>
                                     <div>
-                                        <dd class="detail">製品の新情報見出しテキストサンプル</dd>
+                                        <dd class="detail">
+                                            <a href="#">製品の新情報見出しテキストサンプル</a>
+                                        </dd>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -315,7 +376,11 @@
                                         <dt class="category">製品・サービス</dt>
                                     </div>
                                     <div>
-                                        <dd class="detail">製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見</dd>
+                                        <dd class="detail">
+                                            <a href="#">
+                                                製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見見出しテキストサンプル。製品の新情報見出しテキストサンプル。製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル製品の新情報見出しテキストサンプル新情報見出しテキストサンプル新情報見
+                                            </a>
+                                        </dd>
                                     </div>
                                 </div>
                             </dl>
@@ -328,7 +393,11 @@
                                         <dt class="category">お知らせ</dt>
                                     </div>
                                     <div>
-                                        <dd class="detail">製品の新情報見出しテキストサンプル</dd>
+                                        <dd class="detail">
+                                            <a href="#">
+                                                製品の新情報見出しテキストサンプル
+                                            </a>
+                                        </dd>
                                     </div>
                                 </div>
                             </dl>
@@ -343,42 +412,51 @@
         <section id="service">
             <div class="wrapper">
                 <div class="cmn-title">
+                    <div class="circle"></div>
                     <h2 class="main-title">Service</h2>
                     <p class="sub-title">サービス案内</p>
                 </div>
+                
+              
                 <ul class="service-content">
                     <li class="service-list">
-                        <div class="service-img">
-                            <img src="../Trustweb_1_TOP/Links/25462425_s.jpg" alt="service案内画像1">
-                        </div>
-                        <div class="content">
-                            <p class="content-title">製品のご提案</p>
-                            <p class="content-detail">
-                                電子部品の買付け、置換の提案や、サイネージの設定に関するご相談などお気軽にお問合わせください。
-                            </p>
-                        </div>
+                        <a href="#">
+                            <div class="service-img">
+                                <img src="Links/25462425_s.jpg" alt="service案内画像1">
+                            </div>
+                            <div class="content">
+                                <p class="content-title">製品のご提案</p>
+                                <p class="content-detail">
+                                    電子部品の買付け、置換の提案や、サイネージの設定に関するご相談などお気軽にお問合わせください。
+                                </p>
+                            </div>
+                        </a> 
                     </li>
                     <li class="service-list">
-                        <div class="service-img">
-                            <img src="../Trustweb_1_TOP/Links/25462425_s.jpg" alt="service案内画像1">
-                        </div>
-                        <div class="content">
-                            <p class="content-title">製品のご提案</p>
-                            <p class="content-detail">
-                                電子部品の買付け、置換の提案や、サイネージの設定に関するご相談などお気軽にお問合わせください。
-                            </p>
-                        </div>
+                        <a href="#">
+                            <div class="service-img">
+                                <img src="Links/25462425_s.jpg" alt="service案内画像1">
+                            </div>
+                            <div class="content">
+                                <p class="content-title">製品のご提案</p>
+                                <p class="content-detail">
+                                    電子部品の買付け、置換の提案や、サイネージの設定に関するご相談などお気軽にお問合わせください。
+                                </p>
+                            </div>
+                        </a>
                     </li>
                     <li class="service-list">
-                        <div class="service-img">
-                            <img src="../Trustweb_1_TOP/Links/25462425_s.jpg" alt="service案内画像1">
-                        </div>
-                        <div class="content">
-                            <p class="content-title">製品のご提案</p>
-                            <p class="content-detail">
-                                電子部品の買付け、置換の提案や、サイネージの設定に関するご相談などお気軽にお問合わせください。
-                            </p>
-                        </div>
+                        <a href="#">
+                            <div class="service-img">
+                                <img src="Links/25462425_s.jpg" alt="service案内画像1">
+                            </div>
+                            <div class="content">
+                                <p class="content-title">製品のご提案</p>
+                                <p class="content-detail">
+                                    電子部品の買付け、置換の提案や、サイネージの設定に関するご相談などお気軽にお問合わせください。
+                                </p>
+                            </div>
+                        </a>
                     </li>
                 </ul>
     
@@ -392,53 +470,80 @@
                     <h2 class="main-title">Articles</h2>
                     <h3 class="sub-title">新着記事</h3>
                 </div>
-                <hr>
-                <ul class="articles-content">
-                    <li class="articles-list">
-                        <img src="../Trustweb_1_TOP/Links/25462425_s.jpg" alt="新着記事">
-                        <div class="detail">
-                            <div class="hashtag">
-                                <span>#デジタルサイネージ</span>
-                                <span>#デジタルサイネージ</span>
-                            </div>
-                            <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
-                            <p class="date">2023.10.10</p>
+
+                <div class="swiper" id="swiper-articles">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                    <!-- Slides -->
+                        <div class="swiper-slide articles-list">
+                            <a href="#">
+                                <img src="Links/25462425_s.jpg" alt="新着記事">
+                                <div class="detail">
+                                    <div class="hashtag">
+                                        <span>#デジタルサイネージ</span>
+                                        <span>#デジタルサイネージ</span>
+                                    </div>
+                                    <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
+                                    <p class="date">2023.10.10</p>
+                                </div>
+                            </a>
                         </div>
-                    </li>
-                    <li class="articles-list">
-                        <img src="../Trustweb_1_TOP/Links/25462425_s.jpg" alt="新着記事">
-                        <div class="detail">
-                            <div class="hashtag">
-                                <span>#デジタルサイネージ</span>
-                                <span>#デジタルサイネージ</span>
-                            </div>
-                            <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
-                            <p class="date">2023.10.10</p>
+                        <div class="swiper-slide articles-list">
+                            <a href="#">
+                                <img src="Links/25462425_s.jpg" alt="新着記事">
+                                <div class="detail">
+                                    <div class="hashtag">
+                                        <span>#デジタルサイネージ</span>
+                                        <span>#デジタルサイネージ</span>
+                                    </div>
+                                    <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
+                                    <p class="date">2023.10.10</p>
+                                </div>
+                            </a>
                         </div>
-                    </li>
-                    <li class="articles-list">
-                        <img src="../Trustweb_1_TOP/Links/25462425_s.jpg" alt="新着記事">
-                        <div class="detail">
-                            <div class="hashtag">
-                                <span>#デジタルサイネージ</span>
-                                <span>#デジタルサイネージ</span>
-                            </div>
-                            <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
-                            <p class="date">2023.10.10</p>
+                        <div class="swiper-slide articles-list">
+                            <a href="">
+                                <img src="Links/25462425_s.jpg" alt="新着記事">
+                                <div class="detail">
+                                <div class="hashtag">
+                                    <span>#デジタルサイネージ</span>
+                                    <span>#デジタルサイネージ</span>
+                                </div>
+                                    <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
+                                    <p class="date">2023.10.10</p>
+                                </div>
+                            </a>
                         </div>
-                    </li>
-                    <li class="articles-list">
-                        <img src="../Trustweb_1_TOP/Links/25462425_s.jpg" alt="新着記事">
-                        <div class="detail">
-                            <div class="hashtag">
-                                <span>#デジタルサイネージ</span>
-                                <span>#デジタルサイネージ</span>
-                            </div>
-                            <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
-                            <p class="date">2023.10.10</p>
+                        <div class="swiper-slide articles-list">
+                            <a href="">
+                                <img src="Links/25462425_s.jpg" alt="新着記事">
+                                <div class="detail">
+                                <div class="hashtag">
+                                    <span>#デジタルサイネージ</span>
+                                    <span>#デジタルサイネージ</span>
+                                </div>
+                                    <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
+                                    <p class="date">2023.10.10</p>
+                                </div>
+                            </a>
                         </div>
-                    </li>
-                </ul>
+                        <div class="swiper-slide articles-list">
+                            <a href="">
+                                <img src="Links/25462425_s.jpg" alt="新着記事">
+                                <div class="detail">
+                                <div class="hashtag">
+                                    <span>#デジタルサイネージ</span>
+                                    <span>#デジタルサイネージ</span>
+                                </div>
+                                    <p class="content">新着タイトルのサンプルテキストです。新着タイトルのサンプル</p>
+                                    <p class="date">2023.10.10</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
                 <div class="list-btn">
                     <a href="#">一覧を見る →</a>
                 </div>
@@ -451,18 +556,18 @@
                 <p class="js_typing">We Value Serendipity.</p>
                 <div class="wrapper">
                     <div class="philosophy">
-                        <div class="philosophy1">
-                            <p>私たちは</p>
+                        <div class="philosophy1 leftAnime">
+                            <p class="leftAnimeInner">私たちは</p>
                         </div>
-                        <div class="philosophy2">
-                            <p>Serendipityを</p>
+                        <div class="philosophy2 leftAnime">
+                            <p class="leftAnimeInner">Serendipityを</p>
                         </div>
-                        <div class="philosophy3">
-                            <p>大切に思う企業です。</p>
+                        <div class="philosophy3 leftAnime">
+                            <p class="leftAnimeInner">大切に思う企業です。</p>
                         </div>
                     </div>
                     <div class="title">
-                        <h3 class="box fadeUpTrigger">ABOUT US</h3>
+                        <h2 class="box fadeUpTrigger">ABOUT US</h2>
                         <div class="list-btn">
                             <a href="#">一覧を見る →</a>
                         </div>
@@ -470,7 +575,7 @@
                 </div> 
             </div>
             <div class="op">
-                <img src="../Trustweb_1_TOP/画像素材（追加書き出し分）/T_mark_white_op25.png" alt="">
+                <img src="画像素材（追加書き出し分）/T_mark_white_op25.png" alt="">
             </div>
         </section>
 
@@ -496,7 +601,7 @@
                         <p class="list-title">お電話でのお問い合わせ</p>
                         <div class="telephone-number">
                             <div class="tel">
-                                <span>Tel:</span><a href="tel:06-6791-6600">06-6791-6600</a>
+                                <span>Tel.</span><a href="tel:06-6791-6600">06-6791-6600</a>
                             </div>
                             <p>(平日 10：00〜17：00)</p>
                         </div>
@@ -636,10 +741,15 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
+
+        <!-- スワイパーの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+
   
     <script src="main.js"></script>
 

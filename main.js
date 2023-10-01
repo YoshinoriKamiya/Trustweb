@@ -1,81 +1,102 @@
-//slickの設定
-$('.slider').slick({
-  autoplay:true, //自動スライド
-slidesToShow: 1,
-loop: 1,
-// infinite: false,
-centerMode:true,
-  centerPadding: '25%',
-  autoplaySpeed:5000, //スライドさせる間隔
-  dots:true, //ドットインジケーターを表示
-  lazyLoad:"progressive", //画像の遅延読み込み
-  arrows:true, //スライドの左右の矢印ボタンを非表示
-  prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
-    nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
-　 　cssEase:"cubic-bezier(0.9, 0.03, 0.4, 0.9)",　//CSS3アニメーションイージングを設定
-　 　pauseOnHover:false,
-dots: true,//下部ドットナビゲーションの表示
-pauseOnFocus: false,//フォーカスで一時停止を無効
-pauseOnHover: false,//マウスホバーで一時停止を無効
-pauseOnDotsHover: false,//ドットナビゲーションをマウスホバーで一時停止を無効
-});
-// YouTubeの埋め込み
-function onYouTubeIframeAPIReady() {
-ytPlayer = new YT.Player(
-'youtube', // 埋め込む場所の指定
-{
-  videoId: 'q6T0wOMsNrI', // YouTubeのID
-  playerVars: {
-      height: '100%',
-      width: '100%',
-      loop: 1,//ループ設定
-      playlist: 'q6T0wOMsNrI',//次に流すYouTubeのID　loopの設定が１の場合必須
-      controls: 0,//コントローラー無し
-      autoplay: 1,//オートプレイ
-      showinfo: 0,//動画タイトル表示しない
-      rel: 0,//関連動画の制御
-      iv_load_policy: 3,//動画のアノテーション
-      start: 30 //スタート秒数の指定
+/*-------------------------------------------
+スワイパーの読み込み
+-------------------------------------------*/
+// mainvisual
+const swiper = new Swiper('#swiper-mainvisual', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 1,
+
+  centeredSlides : true,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
   },
-  events: {
-      'onReady': onPlayerReady
-  }
-}
-);
-}
-//プレイ準備完了後
-function onPlayerReady(event) {
-event.target.playVideo();
-event.target.mute();
-}
-
-// 動きのきっかけとなるアニメーションの名前を定義
-function fadeAnime(){
-
-  // ふわっ
-  $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
-    var elemPos = $(this).offset().top-50;//要素より、50px上の
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight){
-    $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
-    }else{
-    $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // スライドの表示枚数：1208px以上の場合
+    1208: {
+      slidesPerView: 2,
+    },
+    968: {
+      slidesPerView: 1.8,
     }
-    });
-}
-
-// 画面をスクロールをしたら動かしたい場合の記述
-  $(window).scroll(function (){
-    fadeAnime();/* アニメーション用の関数を呼ぶ*/
-  });// ここまで画面をスクロールをしたら動かしたい場合の記述
-
-// 画面が読み込まれたらすぐに動かしたい場合の記述
-  $(window).on('load', function(){
-    fadeAnime();/* アニメーション用の関数を呼ぶ*/
-  });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+  }
+  
+});
 
 
+// 主な製品ラインナップ
+  const swiper_products = new Swiper('#swiper-products', {
+    // Optional parameters
+    direction: 'horizontal',
+    slidesPerView: 1,
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true, // ドラッグ操作を可能にする
+      // dragClass: 'drag', // ドラッグ可能なクラスの指定
+      // dragSize: 19, // ドラッグのサイズ指定
+      // snapOnRelease: false // スクロールバーを離したときにスライダーの位置を固定しないようにする
+    },
+    breakpoints: {
+      // スライドの表示枚数：1208px以上の場合
+      1208: {
+        slidesPerView: 5,
+      },
+      // スライドの表示枚数：500px以上の場合
+      968: {
+        slidesPerView: 4,
+      },
+      // スライドの表示枚数：320px以上の場合
+      320: {
+        slidesPerView: 1.8,
+      },
+      1: {
+        slidesPerView: 1,
+      },
+    }
+  });
+
+  // 新着記事
+  const swiper_articels = new Swiper('#swiper-articles', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 4,
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true, // ドラッグ操作を可能にする
+      // snapOnRelease: false // スクロールバーを離したときにスライダーの位置を固定しないようにする
+    },
+    breakpoints: {
+      // スライドの表示枚数：1208px以上の場合
+      968: {
+        slidesPerView: 4,
+      },
+      500: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1.5,
+      },
+      1:{
+        slidesPerView:1,
+      },
+    }
+  });
+
+  /*-------------------------------------------
+画面を下にスクロールしていくと
+アルファベットがランダムに変化してWe Value Serendipity.が出現
+-------------------------------------------*/
 
 var arr = []
 //初期値の設定
@@ -113,6 +134,10 @@ $(window).on('load', function () {
   TypingAnime();/* アニメーション用の関数を呼ぶ*/
 });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 
+
+  /*-------------------------------------------
+ABOUT-US 左から右に流れるテキスト
+-------------------------------------------*/
 function slideAnime(){
   //====左に動くアニメーションここから===
     $('.leftAnime').each(function(){ 
@@ -130,8 +155,7 @@ function slideAnime(){
         $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
         
       }
-    });
-    
+    }); 
   }
   
   // 画面をスクロールをしたら動かしたい場合の記述
@@ -142,4 +166,33 @@ function slideAnime(){
   // 画面が読み込まれたらすぐに動かしたい場合の記述
   $(window).on('load', function(){
     slideAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+  /*-------------------------------------------
+ABOUT-USセクション・ABOUTーUSテキストがふわっと出現する
+-------------------------------------------*/
+  // 動きのきっかけとなるアニメーションの名前を定義
+function fadeAnime(){
+
+  // ふわっ
+  $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
+    }
+    });
+}
+
+// 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function (){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+  $(window).on('load', function(){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
   });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述

@@ -113,134 +113,8 @@ p{
 }
 
 /*-------------------------------------------
-sidebar サイドバー
+sidebar サイドバーはtemplateB.cssを読み込み
 -------------------------------------------*/
-.sidebar {
-  width: 240px;
-  height: 100%;
-  background-color: black;
-  z-index: 101;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 100%;
-  overflow-y: auto;
-}
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-}
-
-.logo {
-  padding: 30px 0 30px 35px;
-  margin-top: 40px;
-  margin-bottom: 5px;
-}
-
-.menu {
-  display: flex;
-  flex-flow: column;
-  font-size: 16px;
-  padding: 10px 0 0 35px;
-}
-
-.menu a {
-  margin-bottom: 20px;
-}
-
-.webshop a {
-  display: flex;
-  padding-left: 30px;
-  margin-top: 150px;
-}
-
-.webshop p {
-  padding: 5px 0 0 20px;
-}
-
-.toiawase a {
-  width: 200px;
-  display: flex;
-  padding: 10px;
-  margin-top: 20px;
-  margin-left: 22px;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease-out;
-}
-
-.toiawase p {
-  padding: 5px 0 0 15px;
-}
-
-.toiawase a {
-  background-position: 15% 50%;
-  background-size: 200% auto;
-  /*アニメーションの指定*/
-  transition: all 0.3s ease-out;
-}
-
-/*hoverした際の、背景の場所とテキスト色の変更*/
-.toiawase a:hover {
-  background-position: 99% 50%;
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.icon a {
-  margin-right: 12px;
-  margin-left: 12px;
-}
-
-.search {
-  display: flex;
-  justify-content: center;
-}
-
-.main-content {
-  width: 1660px;
-  margin-left: 240px;
-  width: calc(100% - 240px);
-}
-
-.topicPath {
-  text-decoration: none;
-  background-color: black;
-  color: white;
-}
-
-.topicPath a {
-  text-decoration: none;
-  color: white;
-}
-
-@media (max-width: 600px) {
-  .sidebar {
-    display: none;
-  }
-
-  .main-content {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1208px){
-.sidebar {
-    display: none;
-}
-.main-content {
-  margin: 0 auto;
-  width: 100%;
-}
-}
 
 /*-------------------------------------------
 mainvisual
@@ -250,72 +124,71 @@ mainvisual
   height:480px;
 }
 
-.visual .slider{
-  display: flex;
-  align-items: center;
-  gap: 20px;
+#mainvisual .swiper-pagination-bullet {
+  background-color: #CCCCCC;
+  opacity: 0.8;
+}
+#mainvisual .swiper-pagination-bullet-active{
+  background-color: #792DDC;
+}
+#mainvisual #swiper-mainvisual{
   padding-top: 20px;
-  
 }
-.visual .top-image{
-  max-width: 800px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
+#mainvisual .swiper-slide{
+
+  flex-shrink: 1;
+  padding: 0 10px;
 }
-.visual .top-image iframe{
-  width: 800px;
-  height:450px;
-  object-fit: cover;
-  border-radius: 30px;
+#mainvisual .swiper-slide img{
+  border-radius: 10px;
+  max-width: 850px;
 }
 
-.visual-btn a{
-  width: 351.4909;
+.slider button.arrow-prev {
+  background-image: url(https://jito-site.com/wp-content/uploads/2023/06/arrow_s2.png);
+  left: -500px;
+}
+.slider button.arrow-next {
+  background-image: url(https://jito-site.com/wp-content/uploads/2023/06/arrow_s.png);
+  right: -1000px;
+}
+
+/* スライダー ボタン */
+#mainvisual .link{
   position: absolute;
-  top:85%;
-  left: 30%;
-  z-index: 10;
+  display: inline-block;
   background-color: #792DDC;
   border-radius: 50px;
+  font-size:16px;
+  height:50px;
   color: #ffffff;
-  padding:10px 30px;
-}
-.slick-prev, 
-.slick-next {
-    position: absolute;/*絶対配置にする*/
-  z-index: 3;
-    top: 42%;
-    cursor: pointer;/*マウスカーソルを指マークに*/
-    outline: none;/*クリックをしたら出てくる枠線を消す*/
-    border-top: 5px solid pink;/*矢印の色*/
-    border-right: 2px solid #ccc;/*矢印の色*/
-    height: 25px;
-    width: 150px;
-}
-
-.slick-prev {/*戻る矢印の位置と形状*/
-    left:50%;
-    transform: rotate(-135deg);
-}
-
-.slick-next {/*次へ矢印の位置と形状*/
-    right:50%;
-    transform: rotate(45deg);
-}
-.slick-prev:before,
-.slick-next:before
-{
-    color:pink;
+  text-align: center;
+  width: 50%;
+  max-width: 351.4909px;
+  line-height: 40px;
+  height: 40px;
+  bottom:40px;
+  right: 24%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  }
+  #mainvisual .link span{
+    font-size: 16px;
+  }
+#mainvisual .link img{
+  width: 50px;
 }
 @media screen and (max-width: 320px) {
-  .visual .top-img{
+  #mainvisual .swiper-slide img{
     max-width: 320px;
-    width: 100%;
+  
   }
-  .visual .top-image img{
-    max-width: 320px;
-    width: 100%;
+}
+
+@media screen and (max-width: 968px) {
+  #mainvisual .swiper-slide img{
+    max-width: 968px;
   }
 }
 /*-------------------------------------------
@@ -377,7 +250,7 @@ Products 製品情報
   width: 3.2773px;
   height: 3.2763px;
   display: block;
-  left: calc(50% - 160px);
+  left: c1alc(50% - 160px);
   top: calc(50% - 1px);
   background-color: #FFFFFF;
   box-shadow: -4.8px 0 0 #FFFFFF, 4.8px 0 0 #FFFFFF, -4.8px -4.8px 0 #FFFFFF, 0 -4.8px 0 #FFFFFF, 4.8px -4.8px 0 #FFFFFF, -4.8px 4.8px 0 #FFFFFF, 0 4.8px 0 #FFFFFF;
@@ -400,37 +273,50 @@ Products 製品情報
 #products .title p{
   margin-bottom: 0;
 }
-#products .products-lineup ul{
-  display: flex;
-  justify-content: space-between;
-  gap:20px;
+#products .swiper{
+  padding-bottom: 320px;
 }
-#products .products-lineup .products-list{
-  width: 250px;
+#products .swiper-wrapper{
+  margin-bottom: 80px;
+}
+#products .swiper-slide{
+  padding-left: 20px;
+}
+#products .swiper-slide:first-of-type{
+  padding-left: 0;
+}
+#products .swiper-slide a{
+  text-decoration: none;
+}
+#products .swiper-slide img{
+  width: 100%;
+  max-width: 284px;
+}
+#products .swiper-slide p{
+  color: #000000;
+  text-decoration: none;
   text-align: center;
-  margin-bottom: 30px;
+  padding-top: 20px;
 }
-#products .products-lineup .products-list img{
-  width: 284px;
-  height:264px;
-  border-radius: 8px;
-  margin-bottom: 30px;
+#products .swiper {
+  max-width: 1500px;
+  width: 100%;
+  height: 300px;
 }
-#products .products-list .products-name{
-  font-size: 0.8rem;
-  padding: 0 30px;
+
+.swiper-scrollbar {
+
 }
 
 @media screen and (max-width: 320px) {
   #products .products-btn-list{
     padding-left: 0;
     margin: 0;
-
-  }
+}
   #products .products-btn a{
     max-width: 280px;
     width: 100%;
-  }
+}
   #products .products-btn{
     height: 50px;
   }
@@ -451,7 +337,16 @@ Products 製品情報
     max-width: 928px;
     width: 100%;
   }
+  #products .swiper-slide img{
+    width: 90%;
+    max-width: 500px;
+  }
+  #products .swiper-slide{
+  padding-left: 0px;
 }
+}
+
+
 
 /*-------------------------------------------
 News 新着情報
@@ -473,6 +368,9 @@ News 新着情報
 }
 #news .list-btn{
   margin-top: 25px;
+}
+.list-btn a{
+text-decoration: none;
 }
 
 
@@ -588,6 +486,10 @@ input[name="tab_switch"] {
   overflow: hidden;
   height: 40px;
 }
+#news .content a{
+  text-decoration: none;
+  color: #0F0F0F;
+}
 #news .content:last-of-type{
   margin-bottom: 0;
 }
@@ -679,6 +581,16 @@ Service サービス案内
   border-radius: 2px;/*線の丸み*/
 }
 
+/* 丸が表示 */
+#service .circle{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  text-align:center;
+  line-height: 80px;
+  border-radius: 50%;
+  border: solid 3px skyblue;
+}
 /*サービス案内の内容  */
 #service .service-content{
   display: flex;
@@ -692,9 +604,10 @@ Service サービス案内
   top: 0;
   left: 0;
 }
-#service .service-img{
- 
+#service .service-list{
+ text-decoration: none;
 }
+
 #service .service-img img{
   width: 92.5%;
   border-radius: 10px;
@@ -723,6 +636,22 @@ Service サービス案内
 #service .content-detail{
   font-size: 16px;
 }
+
+@media screen and (max-width: 550px){
+  #service .service-list{
+    padding-bottom: 100px;
+  }
+}
+@media screen and (max-width: 400px){
+  #service .service-list{
+    padding-bottom: 200px;
+  }
+}
+@media screen and (max-width: 350px){
+  #service .service-list{
+    padding-bottom: 250px;
+  }
+}
 @media screen and (max-width: 968px){
   #service .service-content{
     flex-direction: column;
@@ -730,7 +659,6 @@ Service サービス案内
     
   }
   #service .service-list{
-
     margin-bottom: 30px;
     left:0;
     text-align: left;
@@ -770,21 +698,25 @@ Articles 新着記事
 }
 #articles .articles-list{
   width: 100%;
+  padding-left: 20px;
+  position: relative;
+  left: -20px;
+}
+
+#articles .articles-list a{
+  text-decoration: none;
 }
 #articles .detail{
-  width: 94.4%;
+  padding: 0 10px;
 }
-#articles .hashtag,
-#articles .content,
-#articles .date{
-  padding-left:10px;
-}
+
 #articles span{
   padding-right: 20px;
+  font-size: 14px;
 }
 #articles .articles-list img{
   max-width: 360px;
-
+  width: 100%;
   border-radius: 10px;
   margin-bottom: 24px;
 }
@@ -792,49 +724,57 @@ Articles 新着記事
   font-size: 0.875rem;
   color: #792DDC;
   margin-bottom: 16px;
-  max-width: 162.3736px;
 }
 #articles .articles-list .content{
-  font-size: 1.125rem;
+  font-size: 18px;
   margin-bottom: 16px;
   font-weight: 700;
+  color:#0F0F0F;
 }
 #articles .articles-list .date{
-  font-size: 0.75rem;
+  font-size: 14px;
   color:#666666;
 }
 #articles .list-btn{
   text-align: right;
+  margin-top: 60px;
+}
+#swiper-articles{
+  margin-top: 20px;
+  padding-top: 40px;
+  position: relative;
+}
+#articles .swiper-scrollbar{
+  position: absolute;
+  top:0px;
+  --swiper-scrollbar-border-radius: 10px;
+  --swiper-scrollbar-size: 4px;
+
 }
 
 @media screen and (max-width: 320px) {
   #articles .articles-list img{
     max-width: 252px;
-
+    width: 100%;
   }
 
 }
 @media screen and (max-width: 968px) {
-  #articles .articles-list .hashtag{
-    font-size: 0.75rem;
-  }
-  #articles .articles-list .content{
-    font-size: 0.9375rem;
-  }
-  #articles .articles-content{
-    gap:200px;
-  }
-  #articles .articles-list{
-    width: 90%;
-    min-width: 500px;
-  }
   #articles .articles-list img{
-    min-width: 500px;
+    max-width: 500px;
+    width: 90%;
+  }
+  #articles .detail{
+    max-width: 500px;
     width: 90%;
   }
   #articles .list-btn{
     text-align: center;
   }
+  #articles .articles-list{
+
+  }
+  
 }
 /*-------------------------------------------
 ABOUT US
@@ -861,8 +801,7 @@ ABOUT US
   line-height:100px;
 }
 #about-us .philosophy{
-  margin-top:50px;
-  margin-bottom: 100px;
+  margin-top: calc( (100px - 11%) * -1 );
 }
 #about-us .philosophy1,
 #about-us .philosophy2{
@@ -872,26 +811,25 @@ ABOUT US
   font-size: 64.78px;
   display: inline-block;
   background-color: #792DDC;
-  padding:0px 50px 5px 20px;
+  padding:0px 10px 5px 10px;
   color: #FFFFFF;
   font-family: 源ノ角ゴシック JP;
   margin-bottom: 0;
-}
-#about-us .philosophy p:first-of-type{
-  /* margin-top: 80px; */
 }
 #about-us .title{
   display: flex;
   align-items: center;
   gap:30px;
-  margin-bottom: 60px;
+  margin-top: 100px;
+  
 }
-#about-us .title h3{
+#about-us .title h2{
   font-family: Arial Narrow;
   font-size: 60px;
   font-weight: bold;
   color: #FFFFFF;
   margin-bottom: 0;
+
 }
 
 #about-us .list-btn a{
@@ -916,13 +854,12 @@ ABOUT US
 #about-us .op img{
   height: 800px;
 }
-@media screen and (max-width: 320px) {
-  
-}
 
 @media screen and (max-width: 968px) {
   #about-us{
     height:491.6795 px!important;
+    height: 493.4883px;
+    position: relative;
   }
   #about-us .js_typing{
     font-size: 50px;
@@ -937,76 +874,102 @@ ABOUT US
     padding: 0;
   }
   #about-us .philosophy{
-    margin-top: 80px;
+    
   }
   #about-us .philosophy p{
-    font-size: 26.28px;
+    font-size: 26.283px;
+  }
+  #about-us .wrapper{
+    padding-left: 20px;
+  }
+  #about-us .title{
+    gap:5px;
+  }
+  #about-us .title h2{
+    font-size:40px;
+  }
+  #about-us .op img{
+    height: 493.4883px;
   }
 
 }
 
-/*========= 流れるテキスト ===============*/
+/*==================================================
+流れるテキスト
+===================================*/
 
 /*全共通*/
-
 .slide-in {
-  overflow: hidden;
+	overflow: hidden;
   display: inline-block;
 }
-
 .slide-in_inner {
-  display: inline-block;
+	display: inline-block;
 }
-
 /*左右のアニメーション*/
 .leftAnime{
-  opacity: 0;/*事前に透過0にして消しておく*/
+    opacity: 0;/*事前に透過0にして消しておく*/
 }
-
 .slideAnimeLeftRight {
-  animation-name:slideTextX100;
-  animation-duration:0.8s;
-  animation-fill-mode:forwards;
-  opacity: 0;
+	animation-name:slideTextX100;
+	animation-duration:1.0s;
+	animation-fill-mode:forwards;
+    opacity: 0;
 }
-
 @keyframes slideTextX100 {
   from {
-  transform: translateX(-100%); /*要素を左の枠外に移動*/
-    opacity: 0;
+	transform: translateX(-100%); /*要素を左の枠外に移動*/
+        opacity: 0;
   }
-
   to {
-  transform: translateX(0);/*要素を元の位置に移動*/
+	transform: translateX(0);/*要素を元の位置に移動*/
     opacity: 1;
   }
 }
-
-/* テキストアニメーション 左から右に流れる */
 .slideAnimeRightLeft {
-  animation-name:slideTextX-100;
-  animation-duration:0.8s;
-  animation-fill-mode:forwards;
+	animation-name:slideTextX-100;
+	animation-duration:0.8s;
+	animation-fill-mode:forwards;
     opacity: 0;
 }
-
-
 @keyframes slideTextX-100 {
   from {
-  transform: translateX(100%);/*要素を右の枠外に移動*/
+	transform: translateX(100%);/*要素を右の枠外に移動*/
     opacity: 0;
   }
 
   to {
-  transform: translateX(0);/*要素を元の位置に移動*/
+	transform: translateX(0);/*要素を元の位置に移動*/
     opacity: 1;
   }
 }
 
 
-
-
-
+/*==================================================
+ABOUT-USセクション・ABOUTーUSテキスト ふわっ
+===================================*/
+/* fadeUp */
+.fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+  .fadeUpTrigger{
+      opacity: 0;
+  }
+  
 /*-------------------------------------------
 CONTACT お問い合わせ
 -------------------------------------------*/
@@ -1132,6 +1095,12 @@ CONTACT お問い合わせ
   }
 }
 @media screen and (max-width: 968px) {
+  #contact .main-title{
+    font-size: 40px; 
+  }
+  #contact .sub-title{
+    font-size: 15.55px;
+  }
   #contact .contact-content{
     flex-direction: column;
     gap:20px;
@@ -1146,13 +1115,23 @@ CONTACT お問い合わせ
     margin-top: 30px;
   }
   #contact .inquiryForm a{
-    font-size:19.2px;
+    font-size:16px;
+    width: 85%;
+    max-width: 470px;
+    padding-left:5px;
+    padding-right: 5px;
   }
   #contact .telephone-number{
     margin-top: 20px;
   }
   #contact .telephone-number a{
     font-size: 29.44px;
+  }
+  #contact .telephone-number p{
+    font-size: 12.8px;
+  }
+  #contact .telephone-number span{
+    font-size: 19.8px;
   }
 }
 /*-------------------------------------------
