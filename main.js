@@ -3,96 +3,143 @@
 -------------------------------------------*/
 // mainvisual
 const swiper = new Swiper('#swiper-mainvisual', {
-  // Optional parameters
+
   direction: 'horizontal',
   loop: true,
   slidesPerView: 1,
-
-  centeredSlides : true,
-  // If we need pagination
+  autoplay: {
+    delay: 5000, //　デフォルトの表示時間を指定
+ },
+  centeredSlides:true,
+  spaceBetween: '20', // スライド間のマージン
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
   },
-  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
-    // スライドの表示枚数：1208px以上の場合
+    1470: {
+      slidesPerView: 1.93,
+      spaceBetween: '20', // スライド間のマージン
+    },
     1208: {
-      slidesPerView: 2,
+      slidesPerView: 1.5,
+      spaceBetween: '20', // スライド間のマージン
     },
     968: {
-      slidesPerView: 1.8,
-    }
+      slidesPerView: 1.2,
+      spaceBetween: '20', // スライド間のマージン
+    },
   }
-  
 });
+  // 新着記事
+  $(document).ready(function(){
+    $('.mainvisual-class').slick({
+      pauseOnHover: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerPadding: '25vw',//ポイント！！！
+      // loop:true,
+      dots:true,
+      prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+      nextArrow: '<button class="slide-arrow next-arrow"></button>',
+      variableWidth:true,
+      centerMode: true,
+      responsive:[
+        {
+          breakpoint:968,
+          settings:{
+          slidesToShow:1,
+          centerMode: true,
+          
+        }},
+      ],
+    });
+  });
+
 
 
 // 主な製品ラインナップ
-  const swiper_products = new Swiper('#swiper-products', {
-    // Optional parameters
-    direction: 'horizontal',
-    slidesPerView: 1,
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true, // ドラッグ操作を可能にする
-      // dragClass: 'drag', // ドラッグ可能なクラスの指定
-      // dragSize: 19, // ドラッグのサイズ指定
-      // snapOnRelease: false // スクロールバーを離したときにスライダーの位置を固定しないようにする
-    },
-    breakpoints: {
-      // スライドの表示枚数：1208px以上の場合
-      1208: {
-        slidesPerView: 5,
-      },
-      // スライドの表示枚数：500px以上の場合
-      968: {
-        slidesPerView: 4,
-      },
-      // スライドの表示枚数：320px以上の場合
-      320: {
-        slidesPerView: 1.8,
-      },
-      1: {
-        slidesPerView: 1,
-      },
-    }
+  $(document).ready(function(){
+    $('.products-class').slick({
+      pauseOnHover: false,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      // loop:true,
+      dots: true,
+      arrows: false,
+      dotsClass: 'slider-dots',
+      variableWidth:true,
+      
+      responsive:[
+        {
+          breakpoint:968,
+          settings:{
+          slidesToShow:1,
+          variableWidth:false,
+        }},
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 1,
+            variableWidth:false,
+          }
+        },
+      ],
+    });
   });
+
+
+
 
   // 新着記事
-  const swiper_articels = new Swiper('#swiper-articles', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    slidesPerView: 4,
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true, // ドラッグ操作を可能にする
-      // snapOnRelease: false // スクロールバーを離したときにスライダーの位置を固定しないようにする
-    },
-    breakpoints: {
-      // スライドの表示枚数：1208px以上の場合
-      968: {
-        slidesPerView: 4,
-      },
-      500: {
-        slidesPerView: 2,
-      },
-      320: {
-        slidesPerView: 1.5,
-      },
-      1:{
-        slidesPerView:1,
-      },
-    }
+$(document).ready(function(){
+    $('.article-class').slick({
+      Class: 'slider-articles',
+      pauseOnHover: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      loop:true,
+      dots: true,
+      arrows: false,
+      dotsClass: 'slider-dots',
+      responsive:[
+        {
+          breakpoint:968,
+          settings:{
+          slidesToShow:1,
+          // variableWidth:true,
+        }},
+      ],
+    });
   });
 
+ //クラス名が「scroll-in」の要素を取得
+const objects = document.querySelectorAll('svg');
+
+//スクロール感知で実行
+const cb = function(entries, observer) {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('circle2');//スクロール感知で「displayed」のクラス名を付与
+            observer.unobserve(entry.target); //監視の終了
+        }
+    });
+}
+
+// IntersectionObserverインスタンス化
+const io = new IntersectionObserver(cb);
+
+// 監視を開始
+objects.forEach(object => {
+    io.observe(object);
+});
+
+
+  
   /*-------------------------------------------
 画面を下にスクロールしていくと
 アルファベットがランダムに変化してWe Value Serendipity.が出現
@@ -186,7 +233,6 @@ function fadeAnime(){
     }
     });
 }
-
 // 画面をスクロールをしたら動かしたい場合の記述
   $(window).scroll(function (){
     fadeAnime();/* アニメーション用の関数を呼ぶ*/
@@ -196,3 +242,8 @@ function fadeAnime(){
   $(window).on('load', function(){
     fadeAnime();/* アニメーション用の関数を呼ぶ*/
   });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+
+    /*-------------------------------------------
+スクロールしていくと円が描画されるアニメーション
+-------------------------------------------*/
