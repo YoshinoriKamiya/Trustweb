@@ -117,10 +117,57 @@ $(document).ready(function(){
     });
   });
 
-
-
-
+  /*-------------------------------------------
+円を描画するアニメーション  半径:200px
+-------------------------------------------*/
   
+      // スクロールイベント
+      window.addEventListener('scroll', function() {
+        // アニメーションを呼び出す
+        animateCircle();
+    });
+
+    function animateCircle() {
+        // 要素の縦位置を取得
+        let target = document.querySelector('.svg1').getBoundingClientRect().top;
+        // スクロール量を取得
+        let scroll = window.scrollY;
+        // 表示画面の高さを取得
+        let windowHeight = window.innerHeight;
+
+        // アニメーションをトリガーする条件
+        if (scroll > target - windowHeight) {
+            document.querySelector('.circle1').style.animation = 'circle1 2s forwards'; // アニメーションを有効に
+        }
+    }
+    // 初回のスクロールイベントをトリガー
+    animateCircle();
+
+
+  /*-------------------------------------------
+円を描画するアニメーション  半径:160px
+-------------------------------------------*/
+    // スクロールイベント
+    window.addEventListener('scroll', function() {
+      // アニメーションを呼び出す
+      animateCircle();
+  });
+
+  function animateCircle() {
+      // 要素の縦位置を取得
+      let target = document.querySelector('.svg2').getBoundingClientRect().top;
+      // スクロール量を取得
+      let scroll = window.scrollY;
+      // 表示画面の高さを取得
+      let windowHeight = window.innerHeight;
+
+      // アニメーションをトリガーする条件
+      if (scroll > target - windowHeight ) {
+          document.querySelector('.circle2').style.animation = 'circle2 2s forwards'; // アニメーションを有効に
+      }
+  }
+  // 初回のスクロールイベントをトリガー
+  animateCircle();
   /*-------------------------------------------
 画面を下にスクロールしていくと
 アルファベットがランダムに変化してWe Value Serendipity.が出現
