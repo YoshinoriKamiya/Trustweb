@@ -497,7 +497,7 @@ Products 製品情報
 #products .slider-dots .slick-active button {
   background-color: #792DDC;
   border-radius: 5px;
-  outline: none;
+  outline:none
 }
 #products .slider-dots .slick-active button:hover {
  background-color: #792DDC;
