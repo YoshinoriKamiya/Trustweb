@@ -805,20 +805,19 @@ Service サービス案内
   position: absolute;
   top:-4%;
   left:50%;
-  
 }
 
 .circle1 {
 	fill: transparent;
 	stroke: #792DDC;
 	stroke-width: 2;
-	animation: circle1 1s forwards;
-  
+	/* animation: circle1 1s forwards; */
+  stroke-dasharray: 0  1256;
 }
 
 @keyframes circle1 {
   0% { stroke-dasharray: 0  1256; }
-  99.9%,to { stroke-dasharray: 1256 1256; }
+  100% { stroke-dasharray: 1256 1256; }
 }
 
 .svg2,.circle2{
@@ -928,32 +927,31 @@ Service サービス案内
     font-size: 14px;
   }
   .svg1,.circle1{
-    display: none;
+    visibility: hidden;
   }
   .svg2 {
     transform: translateX(-50%) rotate(-90deg);
     position: absolute;
     top:-3%;
     left:50%;
-    opacity: 0;
-    display:initial;
+    display: block;
   }
   
   .circle2 {
     fill: transparent;
     stroke: #792DDC;
     stroke-width: 2;
-    animation: circle2 2s forwards;
-    display:initial;
-
+    /* animation: circle2 2s forwards; */
+    stroke-dasharray: 0  1005;
+    display: block;
   }
   
   @keyframes circle2 {
     0% { stroke-dasharray: 0  1005;
-    opacity: 1; }
+    }
   
-    99.9%,to { stroke-dasharray: 1005 1005; 
-    opacity: 1;}
+    100% { stroke-dasharray: 1005 1005; 
+    }
   }
 }
 
