@@ -1,41 +1,8 @@
 /*-------------------------------------------
 スワイパーの読み込み
 -------------------------------------------*/
-// mainvisual
-const swiper = new Swiper('#swiper-mainvisual', {
 
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 1,
-  autoplay: {
-    delay: 5000, //　デフォルトの表示時間を指定
- },
-  centeredSlides:true,
-  spaceBetween: '20', // スライド間のマージン
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    1470: {
-      slidesPerView: 1.93,
-      spaceBetween: '20', // スライド間のマージン
-    },
-    1208: {
-      slidesPerView: 1.5,
-      spaceBetween: '20', // スライド間のマージン
-    },
-    968: {
-      slidesPerView: 1.2,
-      spaceBetween: '20', // スライド間のマージン
-    },
-  }
-});
-  // 新着記事
+  // 製品ラインナップ
   $(document).ready(function(){
     $('.mainvisual-class').slick({
       pauseOnHover: false,
@@ -52,7 +19,7 @@ const swiper = new Swiper('#swiper-mainvisual', {
         {
           breakpoint:968,
           settings:{
-          slidesToShow:1,
+          slidesToShow:2,
           centerMode: true,
           
         }},
@@ -78,7 +45,7 @@ const swiper = new Swiper('#swiper-mainvisual', {
         {
           breakpoint:968,
           settings:{
-          slidesToShow:1,
+          slidesToShow:2,
           variableWidth:true,
         }},
         {
