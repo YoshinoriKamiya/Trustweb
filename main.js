@@ -117,26 +117,7 @@ $(document).ready(function(){
     });
   });
 
- //クラス名が「scroll-in」の要素を取得
-const objects = document.querySelectorAll('svg');
 
-//スクロール感知で実行
-const cb = function(entries, observer) {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('circle2');//スクロール感知で「displayed」のクラス名を付与
-            observer.unobserve(entry.target); //監視の終了
-        }
-    });
-}
-
-// IntersectionObserverインスタンス化
-const io = new IntersectionObserver(cb);
-
-// 監視を開始
-objects.forEach(object => {
-    io.observe(object);
-});
 
 
   
