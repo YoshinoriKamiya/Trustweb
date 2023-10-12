@@ -20,7 +20,7 @@
         {
           breakpoint:968,
           settings:{
-          slidesToShow:2,
+          slidesToShow:1,
           centerMode: true,
           
         }},
