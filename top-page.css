@@ -40,8 +40,9 @@ p{
 
 /* 各セクションの共通設定 */
 .wrapper{
-  padding-right:80px;
-  padding-left: 80px;
+  padding-right:25px;
+  padding-left: 25px;
+  margin: 0 auto;
 }
 
 .list-btn a{
@@ -366,6 +367,9 @@ Products 製品情報
   display: flex;
   justify-content:space-between;
   margin-bottom: 60px;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto 60px auto;
 }
 #products .products-top .cmn-title{
   max-width: 359px;
@@ -426,11 +430,17 @@ Products 製品情報
 }
 
 /* 主な製品ラインナップ */
+#products .products-lineup{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
+}
 #products .products-lineup .title{
   font-size:1.5rem;
   position: relative;
   color: #000000;
   display: flex;
+  gap: 20px;
   align-items: center;
   padding: 0;
   margin-bottom: 30px;
@@ -450,8 +460,11 @@ Products 製品情報
 
 /* slick スライダー*/
 #products .products-class{
-  padding-left: 80px;
-  overflow: hidden;
+  margin: 0 auto;
+  padding-left: 25px;
+  overflow: visible;
+  max-width: 1500px;
+  width: 100%;
 }
 #products .swiper-slide{
   padding-right: 20px;
@@ -474,11 +487,11 @@ Products 製品情報
 /* ページネーション */
 #products .slider-dots {
   width: 100%;
+  max-width: 1500px;
   list-style: none;
   margin-top: 30px;
   display: flex;
   gap:0;
-  padding-right: 80px;
 }
 
 #products  .slider-dots li {
@@ -569,7 +582,6 @@ Products 製品情報
 #products .slider-dots {
   padding-right:25px;
 }
-
 }
 
 
@@ -587,10 +599,15 @@ News 新着情報
   display: flex;
   justify-content: space-between;
   padding-bottom:5px;
+  max-width: 1500px;
+  width: 100%;
+  /* gap:20px; */
+  padding: 0 0;
+  margin: 0 auto;
 }
 #news .news-left{
-  max-width: 359px;
-  width: 100%;
+  /* max-width: 359px; */
+
   padding-top: 60px;
 }
 #news .list-btn{
@@ -605,10 +622,14 @@ text-decoration: none;
 }
 /* 切り替えタブ */
 #news .tabs {
+  
+}
+.tab{
   display: flex;
   flex-wrap: wrap;
+  max-width: 1125px;
+  width: 100%;
 }
-
 .tab_label {
   color: #792DDC;
   font-weight: bold;
@@ -618,11 +639,25 @@ text-decoration: none;
   z-index: 1;
   cursor: pointer;
   flex: 1;
-  margin: 0 2.5px; 
+  margin: 0 20px 0 0; 
   text-align: center;
   line-height: 50px;
   font-size: 16px;
 }
+ .tab_label_last{
+    color: #792DDC;
+    font-weight: bold;
+    background-color: #F2EAFC;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    flex: 1;
+    margin: 0; 
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+  }
 .tab_label:first-of-type{
   margin-left: 0;
 }
@@ -994,16 +1029,17 @@ Articles 新着記事
   padding-top: 100px;
   padding-bottom: 100px;
 }
-#articles .title{
-  margin-bottom: 30px;
+#articles .cmn-title{
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto 30px;
 }
 
 
 #articles .articles-list{
   width: 100%;
-  /* padding-left: 20px; */
   position: relative;
-  /* left: -20px; */
+
 }
 
 #articles .articles-list a{
@@ -1047,9 +1083,12 @@ Articles 新着記事
 /* slick */
 #articles .article-class{
   position: relative;
-  padding-top: 60px;
-  padding-left: 80px;
+  /* padding-top: 60px; */
   overflow: hidden;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0 0;
 }
 /* #articles .slider-articles{
   width: 360px !important;
@@ -1079,7 +1118,7 @@ Articles 新着記事
   gap:0;
   position: absolute;
   top:-20px;
-  padding-right: 160px;
+  /* padding-right: 160px; */
 }
 
 #articles .slider-dots button {
@@ -1095,15 +1134,15 @@ Articles 新着記事
 }
 
     
-  #articles .slider-dots::after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-      display: block;
-      width: 0%;
-      height: 100%;
-    }
+#articles .slider-dots::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: block;
+  width: 0%;
+  height: 100%;
+}
 
   #articles  .slider-dots button {
     position: relative;
@@ -1166,9 +1205,7 @@ Articles 新着記事
   #articles .list-btn{
     text-align: center;
   }
-  #articles .article-class{
-    padding-left: 25px;
-  }
+
   #articles .slider-dots {
     padding-left: 0px;
   }
@@ -1176,7 +1213,7 @@ Articles 新着記事
     overflow-x: hidden;
   }
 }
-@media screen and (max-width: 1208px) {
+/* @media screen and (max-width: 1208px) {
   #articles .slider-dots {
     padding-right: 50px;
   }
@@ -1184,7 +1221,7 @@ Articles 新着記事
     padding-left: 25px;
   }
 
-}
+} */
 /*-------------------------------------------
 ABOUT US
 -------------------------------------------*/
@@ -1200,6 +1237,7 @@ ABOUT US
 #about-us .js_typing{
   position: relative;
   top:-10px;
+  left: -5px;
   font-size: 108px;
   color:#FFFFFF;
   font-family: Arial Narrow;
@@ -1226,7 +1264,7 @@ ABOUT US
   font-family: 源ノ角ゴシック JP;
   margin-bottom: 0;
 }
-#about-us .title{
+#about-us .about-us-title{
   display: flex;
   align-items: center;
   gap:30px;
@@ -1234,7 +1272,7 @@ ABOUT US
   position: relative;
   top:440px;
 }
-#about-us .title h2{
+#about-us .about-us-title h2{
   font-family: Arial Narrow;
   font-size: 60px;
   font-weight: bold;
@@ -1266,17 +1304,17 @@ ABOUT US
   height: 800px;
 }
 @media screen and (max-width: 1413px) {
-  #about-us .title{
+  #about-us .about-us-title{
   top:340px;
   }
 }
 @media screen and (max-width: 1208px) {
-  #about-us .title{
-  top:440px;
+  #about-us .about-us-title{
+  top:340px;
   }
 }
 @media screen and (max-width: 1173px) {
-  #about-us .title{
+  #about-us .about-us-title{
   top:340px;
   }
 }
@@ -1293,7 +1331,7 @@ ABOUT US
     line-height: 60px;
     letter-spacing: 5px;
   }
-  #about-us .title{
+  #about-us .about-us-title{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -1308,11 +1346,12 @@ ABOUT US
   #about-us .wrapper{
     padding-left: 20px;
   }
-  #about-us .title{
+  #about-us .about-us-title{
     gap:5px;
     top:182px;
   }
-  #about-us .title h2{
+  
+  #about-us .about-us-title h2{
     font-size:40px;
   }
   #about-us .op img{
