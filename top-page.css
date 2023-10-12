@@ -111,13 +111,20 @@ mainvisual
   padding:15px 0;
   vertical-align: bottom;
   max-width: 100%;
-  
 }
 #mainvisual .swiper-slide img{
   border-radius: 30px;
-  width: 100%;
-  height: auto; 
+  width: 800px;
+  height: 450px; 
   object-fit: cover;
+}
+#mainvisual .swiper-slide video{
+  border-radius: 30px;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  object-fit: cover;
+  /* height: auto;  */
 }
 
 /* スライダー ボタン */
@@ -1053,7 +1060,8 @@ Articles 新着記事
   border-radius: 10px;
   margin-bottom: 24px;
   object-fit: cover;
-  width: 360px;
+  max-width: 360px;
+  width:100%;
 }
 
 #articles .swiper-slide{
@@ -1389,7 +1397,7 @@ ABOUT-USセクション・ABOUTーUSテキスト ふわっ
     transform: translateY(0);
     }
   }
-  /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+  /* スクロールをしたら出現する要素にはじめに透過0を指定*/
   .fadeUpTrigger{
       opacity: 0;
   }
@@ -1528,6 +1536,9 @@ CONTACT お問い合わせ
   #contact .contact-content{
     flex-direction: column;
     gap:20px;
+  }
+  #contact .content p{
+    font-size:30px;
   }
   #contact .contact-list{
     width: 100%;
