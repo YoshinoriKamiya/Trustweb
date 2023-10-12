@@ -8,8 +8,9 @@
       pauseOnHover: false,
       slidesToShow: 1,
       slidesToScroll: 1,
-      centerPadding: '25vw',//ポイント！！！
-      // loop:true,
+      // centerPadding: '25vw',//ポイント！！！
+      loop:true,
+      autoplaySpeed: 1000,
       dots:true,
       prevArrow: '<button class="slide-arrow prev-arrow"></button>',
       nextArrow: '<button class="slide-arrow next-arrow"></button>',
@@ -73,7 +74,7 @@ $(document).ready(function(){
       dots: true,
       arrows: false,
       dotsClass: 'slider-dots',
-      variableWidth:true,
+      variableWidth:false,
       responsive:[
         {
           breakpoint:968,
