@@ -113,7 +113,8 @@ mainvisual
   vertical-align: bottom;
 }
 #mainvisual .swiper-slide img,
-#mainvisual .swiper-slide video{
+#mainvisual .swiper-slide video,
+#mainvisual .swiper-slide iframe{
   border-radius: 30px;
   width: 800px;
   height: 450px; 
@@ -312,7 +313,8 @@ mainvisual
   
 
   #mainvisual .swiper-slide img,
-  #mainvisual .swiper-slide video{
+  #mainvisual .swiper-slide video,
+  #mainvisual .swiper-slide iframe{
     width: 100vw; 
     height: 60vw;
     border-radius: 10px;
@@ -345,7 +347,7 @@ mainvisual
   }
   #mainvisual .slick-dots {
     position: absolute;
-    bottom:1.1%;
+    bottom:0.8%;
     vertical-align: bottom;
     line-height: 15px;
     height: 15px;
