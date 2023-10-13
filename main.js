@@ -5,11 +5,12 @@
   // 製品ラインナップ
   $(document).ready(function(){
     $('.mainvisual-class').slick({
-      pauseOnHover: false,
+      pauseOnHover: true,
       slidesToShow: 1,
       slidesToScroll: 1,
+      // centerPadding: '25vw',//ポイント！！！
       loop:true,
-      autoplay:false,
+      autoplay:true,
       autoplaySpeed: 5000,
       dots:true,
       prevArrow: '<button class="slide-arrow prev-arrow"></button>',
@@ -22,7 +23,7 @@
           settings:{
           slidesToShow:1,
           centerMode: true,
-          // adaptiveHeight:true,
+  
         }},
       ],
     });
@@ -41,7 +42,7 @@
       arrows: false,
       dotsClass: 'slider-dots',
       variableWidth:true,
-      centerPadding: '20px',//ポイント！！！
+      centerPadding: '20px',
       responsive:[
         {
           breakpoint:968,
