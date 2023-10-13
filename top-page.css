@@ -413,6 +413,7 @@ Products 製品情報
   opacity: 0.7;
 }
 
+
 /* 製品カテゴリ・取扱メーカー 一覧ボタンのアイコン */
 #products .products-btn-list .btn3 a{
   position: relative;
@@ -476,12 +477,15 @@ Products 製品情報
   object-fit: cover;
   border-radius: 20px;
 }
+
 #products .products-name{
   font-size: 16px;
   color: #000000;
   text-decoration: none;
   text-align: center;
   padding-top: 20px;
+  width: 55%;
+  margin: 0 auto;
 }
 
 /* ページネーション */
@@ -1043,7 +1047,7 @@ Service サービス案内
     }
   }
 }  
-@media screen and (max-width: 510px){
+@media screen and (max-width: 968px){
   #service .service-list{
     margin-top: 20%;
   }
