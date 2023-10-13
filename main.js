@@ -8,9 +8,9 @@
       pauseOnHover: false,
       slidesToShow: 1,
       slidesToScroll: 1,
-      // centerPadding: '25vw',//ポイント！！！
       loop:true,
-      autoplaySpeed: 1000,
+      autoplay:false,
+      autoplaySpeed: 5000,
       dots:true,
       prevArrow: '<button class="slide-arrow prev-arrow"></button>',
       nextArrow: '<button class="slide-arrow next-arrow"></button>',
@@ -22,7 +22,7 @@
           settings:{
           slidesToShow:1,
           centerMode: true,
-          
+          // adaptiveHeight:true,
         }},
       ],
     });
@@ -83,7 +83,7 @@ $(document).ready(function(){
           variableWidth:true,
         }},
         {
-          breakpoint:525,
+          breakpoint:620,
           settings:{
           slidesToShow:1,
           variableWidth:false,
