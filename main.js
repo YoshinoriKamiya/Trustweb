@@ -1,65 +1,85 @@
 /*-------------------------------------------
 スワイパーの読み込み
 -------------------------------------------*/
-// mainvisual
-const swiper = new Swiper('#swiper-mainvisual', {
 
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 1,
-  autoplay: {
-    delay: 5000, //　デフォルトの表示時間を指定
- },
-  centeredSlides:true,
-  spaceBetween: '20', // スライド間のマージン
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    1470: {
-      slidesPerView: 1.93,
-      spaceBetween: '20', // スライド間のマージン
-    },
-    1208: {
-      slidesPerView: 1.5,
-      spaceBetween: '20', // スライド間のマージン
-    },
-    968: {
-      slidesPerView: 1.2,
-      spaceBetween: '20', // スライド間のマージン
-    },
-  }
-});
-  // 新着記事
+  // 製品ラインナップ
   $(document).ready(function(){
     $('.mainvisual-class').slick({
-      pauseOnHover: false,
+      pauseOnHover: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      centerPadding: '25vw',//ポイント！！！
-      // loop:true,
+  
+      loop:true,
+      autoplay:true,
+      autoplaySpeed: 5000,
       dots:true,
-      prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-      nextArrow: '<button class="slide-arrow next-arrow"></button>',
+      // prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+      // nextArrow: '<button class="slide-arrow next-arrow"></button>',
       variableWidth:true,
       centerMode: true,
+      
       responsive:[
         {
           breakpoint:968,
           settings:{
           slidesToShow:1,
           centerMode: true,
-          
+  
         }},
       ],
     });
   });
+ 
 
+  jQuery(function($) {
+    $('.mainvisual-class').bxSlider({
+        auto: true,
+        pager: false,
+        controls: false,
+        infiniteLoop: true,
+        onSlideBefore: function($slideElement, oldIndex, newIndex) {
+            const videos = $slideElement.parent().find('video');
+            videos.each(function(index, element) {
+                $(element).get(0).pause();
+                $(element).get(0).currentTime = 0;
+            });
+        },
+        onSlideAfter: function($slideElement, oldIndex, newIndex) {
+            const video = $slideElement.find('video');
+            if(video.length) {
+                video.get(0).play();
+            }
+        },
+    });
+});
+
+
+  $(document).ready(function(){
+    $('.mainvisual-class').slick({
+      pauseOnHover: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+  
+      loop:true,
+      autoplay:true,
+      autoplaySpeed: 5000,
+      dots:true,
+      prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+      nextArrow: '<button class="slide-arrow next-arrow"></button>',
+      variableWidth:true,
+      centerMode: true,
+      
+      responsive:[
+        {
+          breakpoint:968,
+          settings:{
+          slidesToShow:1,
+          centerMode: true,
+  
+        }},
+      ],
+    });
+  });
 
 
 // 主な製品ラインナップ
@@ -73,13 +93,13 @@ const swiper = new Swiper('#swiper-mainvisual', {
       arrows: false,
       dotsClass: 'slider-dots',
       variableWidth:true,
-      
+      centerPadding: '20px',
       responsive:[
         {
           breakpoint:968,
           settings:{
-          slidesToShow:1,
-          variableWidth:false,
+          slidesToShow:2,
+          variableWidth:true,
         }},
         {
           breakpoint: 320,
@@ -106,40 +126,101 @@ $(document).ready(function(){
       dots: true,
       arrows: false,
       dotsClass: 'slider-dots',
+      variableWidth:false,
       responsive:[
         {
           breakpoint:968,
           settings:{
           slidesToShow:1,
-          // variableWidth:true,
+          variableWidth:true,
         }},
+        {
+          breakpoint:620,
+          settings:{
+          slidesToShow:1,
+          variableWidth:false,
+        }},
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 1,
+            variableWidth:false,
+          }
+        },
       ],
     });
   });
 
- //クラス名が「scroll-in」の要素を取得
-const objects = document.querySelectorAll('svg');
-
-//スクロール感知で実行
-const cb = function(entries, observer) {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('circle2');//スクロール感知で「displayed」のクラス名を付与
-            observer.unobserve(entry.target); //監視の終了
-        }
-    });
-}
-
-// IntersectionObserverインスタンス化
-const io = new IntersectionObserver(cb);
-
-// 監視を開始
-objects.forEach(object => {
-    io.observe(object);
-});
-
-
+  /*-------------------------------------------
+円を描画するアニメーション  半径:200px
+-------------------------------------------*/
   
+  //    // スクロールイベント
+  //    window.addEventListener('scroll', function() {
+  //     // アニメーションを呼び出す
+  //     animateCircle();
+  // });
+
+  // function animateCircle() {
+  //     // 要素の縦位置を取得
+  //     let target = document.querySelector('.svg1').getBoundingClientRect().top;
+  //     // スクロール量を取得
+  //     let scroll = window.scrollY;
+  //     // 表示画面の高さを取得
+  //     let windowHeight = window.innerHeight;
+
+  //     // アニメーションをトリガーする条件
+  //     if (scroll > target - windowHeight + 0) {
+  //         document.querySelector('.circle1').style.animation = 'circle1 2s forwards'; // アニメーションを有効に
+  //     }
+  // }
+  // // 初回のスクロールイベントをトリガー
+  // animateCircle();
+  //    // スクロールイベント
+  //    window.addEventListener('scroll', function() {
+  //     // アニメーションを呼び出す
+  //     animateCircle();
+  // });
+
+  // function animateCircle() {
+  //     // 要素の縦位置を取得
+  //     let target = document.querySelector('.svg2').getBoundingClientRect().top;
+  //     // スクロール量を取得
+  //     let scroll = window.scrollY;
+  //     // 表示画面の高さを取得
+  //     let windowHeight = window.innerHeight;
+
+  //     // アニメーションをトリガーする条件
+  //     if (scroll > target - windowHeight + 0) {
+  //         document.querySelector('.circle2').style.animation = 'circle2 2s forwards'; // アニメーションを有効に
+  //     }
+  // }
+  // // 初回のスクロールイベントをトリガー
+  // animateCircle();
+  /*-------------------------------------------
+円を描画するアニメーション  半径:160px
+-------------------------------------------*/
+//  // スクロールイベント
+//  window.addEventListener('scroll', function() {
+//   // アニメーションを呼び出す
+//   animateCircle();
+// });
+
+// function animateCircle() {
+//   // 要素の縦位置を取得
+//   let target = document.querySelector('.svg2,.sv').getBoundingClientRect().top;
+//   // スクロール量を取得
+//   let scroll = window.scrollY;
+//   // 表示画面の高さを取得
+//   let windowHeight = window.innerHeight;
+
+//   // アニメーションをトリガーする条件
+//   if (scroll > target - windowHeight + 200) {
+//       document.querySelector('.circle2').style.animation = 'circle2 2s forwards'; // アニメーションを有効に
+//   }
+// }
+// // 初回のスクロールイベントをトリガー
+// animateCircle();
   /*-------------------------------------------
 画面を下にスクロールしていくと
 アルファベットがランダムに変化してWe Value Serendipity.が出現
